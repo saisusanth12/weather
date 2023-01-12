@@ -13,11 +13,10 @@ def index(request):
         json_data = json.loads(res)
         
         data = {
-            "country_code": 'country code : ' + str(json_data['sys']['country']),
-            "coordinate": 'coordinate : ' + str(json_data['coord']['lon']) + ' ' +
+            "coordinate": 'coordinates : ' + str(json_data['coord']['lon']) + ' ' +
             str(json_data['coord']['lat']),
-            "temp": 'temperature : ' + str(json_data['main']['temp']),
-            "pressure": 'pressure : ' + str(json_data['main']['pressure']),
+            "temp": str(json_data['main']['temp']) + ' K',
+            "pressure": 'pressure : ' + str(json_data['main']['pressure']) + ' hPa',
             "humidity": 'humidity : ' + str(json_data['main']['humidity'])
         }
     else:

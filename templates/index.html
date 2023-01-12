@@ -43,7 +43,7 @@
 }
 
 </style>
-<body style="background-color: #110; font-family: 'Quicksand', sans-serif;"; >
+<body style="background-color: #110; font-family: 'Martian Mono', monospace;"; >
   <nav class="row" style="background: #3b3939; color: white;">
     <div style="text-align: center; margin-bottom: 0px;"><h1 class="col-md-3 text-center">Weather Detector</h1></div>
   </nav>
@@ -51,7 +51,7 @@
     <form action="" method="post" class="col-md-6 col-md-offset-3">
       {% csrf_token %}
       <div class="input-group" style="border: 1px solid skyblue; margin-top: 50px;">
-        <input type="text" class="form-control" name="city" placeholder="{{city}}" style="font-family: 'Martian Mono', monospace;">
+        <input type="text" class="form-control" name="city" placeholder="{{city}}" style="font-family: 'Martian Mono', sans-serif;">
         <div class="input-group-btn">
           <button class="btn btn-primary" type="submit">
             <i class="glyphicon glyphicon-search "></i>
@@ -62,12 +62,11 @@
   <div class="row">
     
     <div class="col-md-6 col-md-offset-3" style="margin-top: 20px;">
-      <h1 style="font-weight: bold; color: rgb(0, 255, 0);">{{city}}</h1>
-      <h3>{{data.country_code}}</h1>
+      <h1 style="font-weight: bold; color: rgb(255, 255, 255);">{{city}}</h1>
+      <h2 style="padding-bottom: 15px;">{{data.temp}}</h2>
         <h5>{{data.coordinate}}</h5>
-        <h5>{{data.temp}}</h5>
         <h5>{{data.pressure}}</h5>
-        <h5>{{data.humidity}}</h5>
+        <h5>{{data.humidity}} %</h5>
     </div>
   </div>
 </body>
